@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans 
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation= "http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd" >
+
+	<context:component-scan base-package="br.com.rsi*, io.openbdt.*" />
+	
+	<!-- <bean class="io.openbdt.element.WebBrowserScreenElement" 	id="webBrowserScreenElement"/> -->
+	<!-- <bean class="io.openbdt.run.SuiteTestRunner" 			id="suiteTestRunner"/> -->
+
+	<!-- <bean id="jmsDestination" class="javax.jms.Destination"/> 
+	<bean id="messageDestination" class="org.apache.activemq.command.ActiveMQQueue">
+		<constructor-arg value="messageQueueSpeech" />
+	</bean>
+	<bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+		<property name="brokerURL" value="tcp://localhost:61616" />
+		<property name="trustedPackages" value="*" />
+	</bean>
+	<bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+		<property name="connectionFactory" 	ref="connectionFactory" />
+		<property name="receiveTimeout" 	value="10000" />
+	</bean>
+-->
+	<bean class="io.openbdt.element.WebBrowserScreenElement" 	id="webBrowserScreenElement"/>
+	<bean class="io.openbdt.run.SuiteTestRunner" 				id="suiteTestRunner"/>
+
+	<!-- <bean class="io.openbdt.speech.api.services.impl.CaptureAndSpeechRecognitionFacadeServiceImpl" id="captureAudioService" />
+	<bean class="io.openbdt.speech.api.services.impl.CaptureAudioServiceImpl" id="captureAndSpeechRecognitionFacadeService" />
+	<bean class="io.openbdt.speech.api.services.impl.AssertAudioServiceImpl" id="assertAudioService" />
+	<bean class="io.openbdt.speech.api.services.impl.AudioReportServiceImpl" id="audioReportService" /> -->
+	
+	<!-- <bean class="br.com.rsi.steps.business.async.StepSantanderChequeEspecial" 				id="stepSantanderCheque"/> -->
+	
+	<context:property-placeholder location="classpath:application.properties" />
+</beans>
